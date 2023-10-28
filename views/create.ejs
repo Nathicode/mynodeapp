@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .form {
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: crimson;
+        }
+        form label {
+            color: white;
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-bottom: 1cm;
+        }
+        form textarea {
+            margin-bottom: 1cm;
+            height: 100px;
+        }
+        form button {
+            width: 110px;
+            height: 30px;
+            margin: auto;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            color: crimson;
+        }
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-radius: 5px;
+        }
+        input:focus {
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/nav.ejs') %>
+        <div class="form">
+            <form action="/blog" method="POST">
+                <label for="name">Input Your Name</label>
+                <input type="text" id="name" name="title">
+                <label for="text" draggable="false">Add Your Blogs</label>
+                <textarea type="text" id="text"  name="snippet"></textarea>
+                    <button>Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
